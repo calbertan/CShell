@@ -174,7 +174,7 @@ void ls(const char* file_name, const char* path) {
     printf("%-6ld ", fileStat.st_size);
     
     char *formattedTime = (char*) malloc(sizeof(char) * 70);
-    strftime(formattedTime,70, "%b %d %Y %H:%M", localtime((struct timespec *)&(fileStat.st_mtim)));
+    strftime(formattedTime,70, "%b %d %Y %H:%M", localtime(&(fileStat.st_mtim)));
 
     if (formattedTime[4] == '0') {
       formattedTime[4] = ' ';
